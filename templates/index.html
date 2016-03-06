@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+{% block title %}Know Your Leaders{% endblock %}
+{%block extrahead %}{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+ {% if messages %}
+        <center>
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </center>
+ {% endif %}
+   
+
+   <!--/start-banner-->
+    <div class="banner">
+        <div class="container">
+            <div class="banner-inner">
+                <div class="callbacks_container">
+                    <ul class="rslides callbacks callbacks1" id="slider4">
+                        <li class="callbacks1_on" style="display: block; float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 500ms ease-in-out;">
+                            <div class="banner-info">
+                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p>Lorem ipsum dolor sit amet</p>
+                            </div>
+                        </li>
+                        <li class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;">
+                            <div class="banner-info">
+                              <h3>Ut enim ad minima veniam, quis nostrum exercitationem</h3>
+                             <p>Lorem ipsum dolor sit amet</p>
+                            </div>
+                        </li>
+                        <li class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;">
+                            <div class="banner-info">
+                             <h3>At vero eos et accusamus et iusto odio dignissimos.</h3>
+                            <p>Lorem ipsum dolor sit amet</p>
+                            </div>  
+                        </li>
+                    </ul>
+                </div>
+                    <!--banner-Slider-->
+                    <script src="{% static "js/responsiveslides.min.js" %}"></script>
+                     <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                      // Slideshow 4
+                      $("#slider4").responsiveSlides({
+                    auto: true,
+                    pager: true,
+                    nav:false,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                      $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                      $('.events').append("<li>after event fired.</li>");
+                    }
+                      });
+
+                    });
+                      </script>
+            </div>
+        </div>
+  </div>
+<!--//end-banner-->
+<!--/start-main-->
+   <div class="main-content">
+       <div class="container">
+            <div class="mag-inner">
+                <div class="col-md-8 mag-innert-left jghdl">
+                    <div class="issues">
+                        <h3><a href="#">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+                            consectetur, adipisci velit</a></h3>
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+                            esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat 
+                            quo voluptas nulla pariatur autem vel eum iure reprehenderit qui in ea voluptate velit 
+                            esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat 
+                            quo voluptas nulla pariatur quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+                            esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat 
+                            quo voluptas nulla pariatur autem vel eum iure reprehenderit qui in ea voluptate velit 
+                            esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat 
+                            quo voluptas nulla pariatur vel eum iure reprehenderit qui in ea voluptate velit 
+                            esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.</p>
+                    </div>
+                        <!--/start-Technology-->
+                         <div class="technology">
+                          <h2 class="tittle"><i class="glyphicon glyphicon-hand-right" aria-hidden="true"></i>National</h2>
+                            <div class="col-md-6 tech-img">
+                              <img src="{% static "images/tech.jpg" %}" class="img-responsive" alt=""/>
+                            </div>
+                             <div class="col-md-6 tech-text">
+                                <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f1.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">Barack Hussein Obama , President Of America.</a></h5>
+                                                 <div class="td-post-date two">Overcoming the Democratic ..</div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f2.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">Narendra Modi , PM of India.</a></h5>
+                                                  <div class="td-post-date two">Combined with a handful...</div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f3.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">Rahul Gandhi , Politician.</a></h5>
+                                                  <div class="td-post-date two">Fueled by rage over JNU...</div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f4.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">Adelmir Santana , Politician.</a></h5>
+                                                   <div class="td-post-date two">Combined with a handful.</div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                            </div>
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--//end-Technology-->
+                      <div class="gallery">
+                            <div class="main-title-head">
+                              <h3 class="tittle"><i class="glyphicon glyphicon-picture"></i>Gallery</h3>
+                            </div>
+                            <div class="gallery-images">
+                                <div class="course_demo1">
+                                  <ul id="flexiselDemo1">   
+                                     <li>
+                                        <a href="single.html"><img src="{% static "images/mg1.jpg" %}" alt="" /></a>                        
+                                     </li>
+                                     <li>
+                                        <a href="single.html"><img src="{% static "images/mg2.jpg" %}" alt="" /></a>
+                                      </li> 
+                                     <li>
+                                        <a href="single.html"><img src="{% static "images/mg3.jpg" %}" alt="" /></a>
+                                     </li>  
+                                     <li>
+                                        <a href="single.html"><img src="{% static "images/mg4.jpg" %}" alt="" /></a>
+                                     </li>  
+                                 </ul>
+                             </div>
+                                <script type="text/javascript">
+                             $(window).load(function() {
+                                $("#flexiselDemo1").flexisel({
+                                    visibleItems: 3,
+                                    animationSpeed: 1000,
+                                    autoPlay: true,
+                                    autoPlaySpeed: 3000,            
+                                    pauseOnHover: true,
+                                    enableResponsiveBreakpoints: true,
+                                    responsiveBreakpoints: { 
+                                        portrait: { 
+                                            changePoint:480,
+                                            visibleItems: 2
+                                        }, 
+                                        landscape: { 
+                                            changePoint:640,
+                                            visibleItems: 2
+                                        },
+                                        tablet: { 
+                                            changePoint:768,
+                                            visibleItems: 3
+                                        }
+                                    }
+                                });
+                                
+                             });
+                              </script>
+                             <script type="text/javascript" src="{% static "js/jquery.flexisel.js" %}"></script>
+                         </div>
+                             <a class="more" href="single.html">More  +</a>
+                    </div>
+                </div>
+                 <div class="col-md-4 mag-inner-right">
+                  <div class="connect">
+                    <h4 class="side" ><i class="glyphicon glyphicon-hand-right" aria-hidden="true"></i>STAY CONNECTED</h4>
+                      <ul class="stay">
+                        <li class="c5-element-facebook"><a href="#"><span class="icon"></span><h5>700</h5><span class="text">Followers</span></a></li>
+                        <li class="c5-element-twitter"><a href="#"><span class="icon1"></span><h5>201</h5><span class="text">Followers</span></a></li>
+                         <li class="c5-element-gg"><a href="#"><span class="icon2"></span><h5>111</h5><span class="text">Followers</span></a></li>
+                        <li class="c5-element-dribble"><a href="#"><span class="icon3"></span><h5>99</h5><span class="text">Followers</span></a></li>
+                        
+                      </ul>
+                  </div>
+                    <div class="modern">
+                      <h4 class="side"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> Make them Famous</h4>
+                      <div id="example1">
+                        <div id="owl-demo" class="owl-carousel text-center">
+                          <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p1.jpg" %}" alt=""/>
+                         </div>
+                         <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p2.jpg" %}" alt=""/>
+                        </div>
+                        <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p33.jpg" %}" alt=""/>
+                        </div>
+                        <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p1.jpg" %}"alt=""/>
+                    </div>
+                    <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p1.jpg" %}" alt=""/>
+                    </div>
+                        <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p2.jpg" %}" alt=""/>
+                    </div>
+                        <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p33.jpg" %}" alt=""/>
+                    </div>
+                        <div class="item">
+                    
+                            <img class="img-responsive lot" src="{% static "images/p1.jpg" %}" alt=""/>
+                    </div>
+                </div>
+                </div>
+                <!-- requried-jsfiles-for owl -->
+                                        <script src="{% static "js/owl.carousel.js" %}"></script>
+                                          <script>
+                                          $(document).ready(function() {
+                                               $("#owl-demo").owlCarousel({
+                                                items :1,
+                                                lazyLoad : true,
+                                                autoPlay : false,
+                                                navigation : true,
+                                                navigationText :  true,
+                                                pagination : false,
+                                                responsiveBreakpoints: { 
+                                        portrait: { 
+                                            changePoint:480,
+                                            visibleItems: 2
+                                        }, 
+                                        landscape: { 
+                                            changePoint:640,
+                                            visibleItems: 2
+                                        },
+                                        tablet: { 
+                                            changePoint:768,
+                                            visibleItems: 3
+                                        }
+                                    }
+                                                });
+                                          });
+                                        </script>
+                        <!-- //requried-jsfiles-for owl -->
+                        </div>
+                             <h4 class="side"><i class="glyphicon glyphicon-file" aria-hidden="true"></i>Popular Posts</h4>
+                                <div class="edit-pics">
+                                        <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f4.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">There are many variations of passages.</a></h5>
+                                                 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Nov 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f3.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">There are many variations of passages.</a></h5>
+                                                 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Nov 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="editor-pics">
+                                         <div class="col-md-3 item-pic">
+                                           <img src="{% static "images/f2.jpg" %}" class="img-responsive" alt=""/>
+
+                                           </div>
+                                            <div class="col-md-9 item-details">
+                                                <h5 class="inner two"><a href="single.html">There are many variations of passages.</a></h5>
+                                                 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Nov 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
+                                             </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                            <!--//edit-pics-->
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                 <!--//end-mag-inner-->
+                     <!--/mag-bottom-->
+                 <div class="mag-bottom">
+                     <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>From around the World</h3>
+                     <div class="grid">
+                          <div class="col-md-4 m-b">
+                            <a href="single.html"> <figure class="effect-layla"></a>
+                                <img src="{% static "images/pic.jpg" %}" alt="img25"/>
+                                <figcaption>
+                                    <h4>Annegret Krisko<span>Politician</span></h4>
+                                    <a href="#">View more</a>
+                                </figcaption>           
+                              </figure>
+                               <div class="m-b-text">
+                                    <a href="single.html" class="wd">Lorem ipsum dolor sit amet,interdum ullamcorper consectetur </a>
+                                    <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
+                                    <a class="read" href="single.html">Read More</a>
+                                </div>
+                          </div>
+                           <div class="col-md-4 m-b">
+                             <figure class="effect-layla">
+                            <a href="single.html">  <img src="{% static "images/pic2.jpg" %}"alt="img25"/></a>
+                                <figcaption>
+                                    <h4>Stephen Harper<span>Politician</span></h4>
+                                </figcaption>           
+                              </figure>
+                              <div class="m-b-text">
+                                    <a href="single.html" class="wd">Lorem ipsum dolor sit amet,interdum ullamcorper consectetur </a>
+                                    <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
+                                    <a class="read" href="single.html">Read More</a>
+                                </div>
+                          </div>
+                          <div class="col-md-4 m-b">
+                             <figure class="effect-layla">
+                                <a href="single.html"><img src="{% static "images/pic1.jpg" %}" alt="img25"/></a>
+                                <figcaption>
+                                    <h4>Shane Robinson<span>Politician</span></h4>
+                                </figcaption>           
+                              </figure>
+                              <div class="m-b-text">
+                                    <a href="single.html" class="wd">Lorem ipsum dolor sit amet,interdum ullamcorper consectetur </a>
+                                    <p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
+                                    <a class="read" href="single.html">Read More</a>
+                                </div>
+                          </div>
+                         <div class="clearfix"></div>
+                        </div>
+                  </div>
+                 <!--//mag-bottom-->
+           </div>
+      </div>
+ <!--//end-main-->
+ <!--/start-footer-section-->
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Know Your Leaders{% endblock %}
+{%block extrahead %}
+<script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <center><font size="5">
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    </font></center>
+    {% endfor %}
+</ul>
+{% endif %}
+   <!--/start-banner
+	<div class="banner1">
+		<div class="container">
+		</div>
+	</div>
+	//end-banner-->
+	<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<h3>How To Find Us</h3>
+			<div class="contact-bottom">
+				<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBpggT9zJ46sbB0tBofuxyPE2f_g2XQg1g&q=VIT+Vellore" allowfullscreen>
+				</iframe>
+			</div>
+			<div class="col-md-4 contact-left">
+				<h4>Address</h4>
+				<p>D240 VIT University
+					<span>Vellore,TN</span></p>
+				<ul>
+					<li>Free Phone :+1987654321</li>
+					<li>Telephone :+1 078 4589 2456</li>
+					<li>Fax :+1 078 4589 2456</li>
+					<li><a href="mailto:ashish.sareen2013@vit.ac.in">ashish.sareen2013@vit.ac.in</a></li>
+				</ul>
+			</div>
+			<div class="col-md-8 contact-left">
+				{% if Error %}
+                        <h4 align='center'><strong> {{Error}} </strong></h4>
+                        {% endif %}
+				<h4>Contact Form</h4>
+				<form id="contactform" method="post" action="{% url 'kyl:contact' %}">
+					{% csrf_token %}
+					{% if form.errors %}
+                        {% for field in form %}
+                        {% for error in field.errors %}
+                        <h4 align='center'> {{ error }} </h4>
+                        {% endfor %}
+                        {% endfor %}
+                        {% endif %}
+
+					<input type="text" placeholder="Name" value="" required style="color:black">
+					<input type="email" placeholder="Email" value="" required style="color:black">
+					<input type="text" placeholder="Telephone" value="" required style="color:black">
+					<textarea type="text" placeholder="Message" required style="color:black"></textarea>
+					<input id="ContactSubmit" type="submit" value="Submit" >
+					<input type="reset" value="Clear" >
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //contact -->
+	<!--/start-footer-section-->
+{% endblock %}
