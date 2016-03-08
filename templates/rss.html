@@ -32,12 +32,13 @@
         <h4>Latest News Feed</h4>
         <form id="contactform" method="get" action="{% url 'kyl:rssfeed' %}">
 
-          <input name="includess" type="text" placeholder="Include" value="" style="color:black">
-          <input name="excludess" type="text" placeholder="Exclude" value=""  style="color:black">
-          <br>
+          <input name="includess" type="text" placeholder="Include" value="" style="font-weight:bold; color:black;">
+          <input name="excludess" type="text" placeholder="Exclude" value="" style="font-weight:bold; color:black;">
+          <br><br><br>
           <input id="ContactSubmit" type="submit" value="Submit" >
           <input type="reset" value="Clear" >
         </form>
+        <br>
       </div>
 
 <script type="text/javascript">

@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'kyl:homepage' %}">Politics</a>
+                <a class="navbar-brand" href="{% url 'kyl:homepage' %}">Know Thy Leader  </a>
             </div>
             <!--/.navbar-header-->
         
@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="nav navbar-nav">
                         <li class="active"><a href="{% url 'kyl:homepage' %}">Home</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">The Party<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forum<b class="caret"></b></a>
                             <ul class="dropdown-menu multi-column columns-2">
                                 <div class="row">
                                     <div class="party">
@@ -67,15 +67,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </ul>
                         </li>
-                        <li><a href="typography.html">Politics</a></li>
+                        <li><a href="{% url 'kyl:rssfeed' %}">News Feed</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Leadership<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Leaders<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="leadership.html">Martin</a></li>
+                                <li><a href="leadership.html">Modi</a></li>
                                 <li class="divider"></li>
-                                <li><a href="leadership.html">Sanders</a></li>
+                                <li><a href="leadership.html">Gandhi</a></li>
                                 <li class="divider"></li>
-                                <li><a href="leadership.html">Brush Willium</a></li>
+                                <li><a href="leadership.html">Obama</a></li>
                                 <li class="divider"></li>
                                 <li><a href="leadership.html">Ben Mark</a></li>
                                 <li class="divider"></li>
@@ -83,15 +83,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         </li>
                         <li><a href="{% url 'kyl:contact' %}">Contact</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'kyl:logout' %}">Logout</a></li>
+                        {% endif %}
                 </ul>
-                <div class="social-icons">
+                {% if user.is_authenticated %}
+
+                    <p style="float:right; font-weight:bold;"> User : {{user.username}}</p>
+
+                    {% else %}
+                    <div class="social-icons">
                     <ul>
-                        <li><a href="#" class="facebook"> </a></li>
-                        <li><a href="#" class="p"> </a></li>
-                        <li><a href="#" class="g"> </a></li>
-                        <li><a href="#" class="twitter"> </a></li>
+                        <li><a href="{% url 'kyl:login' %}" class="facebook"> </a></li>
+                        <li><a href="{% url 'kyl:login' %}" class="p"> </a></li>
+                        <li><a href="{% url 'kyl:login' %}" class="g"> </a></li>
+                        <li><a href="{% url 'kyl:login' %}" class="twitter"> </a></li>
                     </ul>
                 </div>
+                    {% endif %}
+                
             </div>
                 <!--/.navbar-collapse-->
                 <!--/.navbar-->

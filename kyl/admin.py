@@ -6,13 +6,22 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm,AdminPass
 
 class CustomUserAdmin(UserAdmin):
 
+    # Text to put at the end of each page's <title>.
+    site_title = _('KYL admin')
+
+    # Text to put in each page's <h1>.
+    site_header = _('KYL administration')
+
+    # Text to put at the top of the admin index page.
+    index_title = _('Site administration')
+
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email','verified_email','dob','phone','address','pincode','country')}),
-        (_('Permissions'), {'fields': ('hashcheck','is_active', 'is_staff', 'is_superuser',
+        (_('Permissions'), {'fields': ('token','is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('Additional Info'), {'fields': ('aadhar', 'passport',"voter_id")}),
+        (_('Additional Info'), {'fields': ('aadhar', 'passport',"voterid")}),
     )
     add_fieldsets = (
         (None, {
@@ -30,4 +39,5 @@ class CustomUserAdmin(UserAdmin):
     filter_horizontal = ('groups', 'user_permissions',)
 
 
+admin.site.site_header = 'KYL administration'
 admin.site.register(User, CustomUserAdmin)
