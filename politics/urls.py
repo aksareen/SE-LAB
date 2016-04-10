@@ -22,5 +22,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('kyl.urls' , namespace="kyl")),
+    url(r'^forums/', include('django_simple_forum.urls' , namespace="forums")),
 ]  + static(settings.STATIC_URL)
 

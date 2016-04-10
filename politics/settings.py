@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'kyl',
+    'django_simple_forum',
 ]
 
 MIDDLEWARE_CLASSES = [

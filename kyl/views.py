@@ -19,8 +19,8 @@ def homepage(request):
 def rssfeed(request):
     if request.method == "GET":
         dictr = {}
-        includess = request.POST.get('includess', False)
-        excludess = request.POST.get('excludess', False)
+        includess = request.GET.get('includess', False)
+        excludess = request.GET.get('excludess', False)
         if includess:
             dictr['includess'] = includess
         if excludess:

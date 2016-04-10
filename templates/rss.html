@@ -27,6 +27,7 @@
 }
  </style>
 
+
 <div class="col-md-8 contact-left">
 
         <h4>Latest News Feed</h4>
@@ -37,7 +38,10 @@
           <br><br><br>
           <input id="ContactSubmit" type="submit" value="Submit" >
           <input type="reset" value="Clear" >
+
+          
         </form>
+
         <br>
       </div>
 
@@ -48,7 +52,7 @@ document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document
 
 (function() {
 
-var params = {rssmikle_url: "http://www.ibnlive.com/rss/politics.xml|http://www.firstpost.com/politics/feed|http://www.ft.com/rss/world/asiapacific/india|http://www.thehindu.com/business/Economy/?service=rss",rssmikle_frame_width: "620",rssmikle_frame_height:"800",frame_height_by_article: "8",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "18",rssmikle_border: "on",responsive: "on",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "on",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "5",mcspeed: "20",sort: "New",rssmikle_title: "on",rssmikle_title_sentence: "Latest News",rssmikle_title_link: "",rssmikle_title_bgcolor: "#0066FF",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#FFFFFF",rssmikle_item_bgimage: "",rssmikle_item_title_length: "120",rssmikle_item_title_color: "#0066FF",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "800",rssmikle_item_description_color: "#666666",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "35",rssmikle_item_podcast: "off",keyword_inc:"" ,keyword_exc:"" };
+var params = {rssmikle_url: "http://www.ibnlive.com/rss/politics.xml|http://www.firstpost.com/politics/feed|http://www.ft.com/rss/world/asiapacific/india|http://www.thehindu.com/business/Economy/?service=rss|http://feeds.feedburner.com/News-People",rssmikle_frame_width: "620",rssmikle_frame_height:"800",frame_height_by_article: "8",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "18",rssmikle_border: "on",responsive: "on",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "on",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "5",mcspeed: "20",sort: "New",rssmikle_title: "on",rssmikle_title_sentence: "Latest News",rssmikle_title_link: "",rssmikle_title_bgcolor: "#0066FF",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#FFFFFF",rssmikle_item_bgimage: "",rssmikle_item_title_length: "120",rssmikle_item_title_color: "#0066FF",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "800",rssmikle_item_description_color: "#666666",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M %p",item_description_style: "text+tn",item_thumbnail: "full",item_thumbnail_selection: "auto",article_num: "35",rssmikle_item_podcast: "off",keyword_inc:"" ,keyword_exc:"" };
 
 {% if includess %}
 params['keyword_inc'] = "{{includess}}";
