@@ -25,11 +25,11 @@
         {% if messages %}
   <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><b style="color : red;">{{ message }}<b></li>
     {% endfor %}
   </ul>
   {% endif %}
-          <h1 class="text-center">KYL Login</h1>
+          <h1 style="color : green;" class="text-center">KYL Login</h1>
       </div>
       <div class="modal-body">
           <form class="form col-md-12 center-block" name="loginform" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" method="post" action = "{% url 'kyl:login' %}">
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
               <button id="Signin" class="btn btn-primary btn-lg btn-block">Sign In</button>
-              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Forgot Password?</a></span>
+              <span class="pull-right"><a href="{% url 'kyl:signup' %}">Register</a></span><span><a href="#">Forgot Password?</a></span>
             </div>
           </form>
       </div>

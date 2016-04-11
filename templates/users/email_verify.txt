@@ -1,0 +1,5 @@
+Hello {{ fname }} {{ lname }}. 
+
+Click on the link {{ message|safe|striptags }} to verify your Email: {{ email }}  for your account handle {{ username }}.
+
+For any queries please contact us at  : ashish.sareen95@gmail.com

@@ -97,10 +97,10 @@ DATABASES = {
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND ='django.core.mail.backends.console.EmailBackend' 
 EMAIL_HOST_USER = 'varun.gambhir2012@gmail.com'
-EMAIL_HOST_PASSWORD = 'Bamboo2012'
+EMAIL_HOST_PASSWORD = 'GAMBHIRrocks20120210'
 DEFAULT_FROM_EMAIL = 'varun.gambhir2012@gmail.com'
 DEFAULT_TO_EMAIL = 'ashish.sareen2013@vit.ac.in'
 EMAIL_USE_TLS = True 

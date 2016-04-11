@@ -71,11 +71,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Leaders<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="leadership.html">Modi</a></li>
+                                <li><a href="{% url 'kyl:leadership_modi' %}">Modi</a></li>
                                 <li class="divider"></li>
                                 <li><a href="leadership.html">Gandhi</a></li>
                                 <li class="divider"></li>
-                                <li><a href="leadership.html">Obama</a></li>
+                                <li><a href="{% url 'kyl:leadership_obama' %}">Obama</a></li>
                                 <li class="divider"></li>
                                 <li><a href="leadership.html">Ben Mark</a></li>
                                 <li class="divider"></li>
@@ -85,6 +85,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="{% url 'kyl:contact' %}">Contact</a></li>
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'kyl:logout' %}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{% url 'kyl:login' %}">Login</a></li>
                         {% endif %}
                 </ul>
                 {% if user.is_authenticated %}

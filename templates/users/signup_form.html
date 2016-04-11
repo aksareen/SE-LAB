@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Signup Form{% endblock %}
+{% block extrahead %}
+<script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
+{% endblock %}
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<style type="text/css">
+
+.form-horizontal
+{
+
+}
+
+
+</style>
+
+                <form role="form" class="form-horizontal" method="post" action="{% url 'kyl:signup' %}">
+                   {% csrf_token %}
+                   <fieldset>
+                    <legend class="text-center header">Sign Up Form</legend>
+                     </fieldset>
+                    {% for err in form.non_field_errors %}
+                    <div class="form_error_message">{{ err }}</div>
+                    {% endfor %}
+                    {% for field in form %}
+    
+                            <div class="form-group">
+                            <label class="control-label col-sm-2">{{ field.label }}</label>                            
+                            <div class="col-sm-10">  
+                            {{ field }} 
+                             {% for err in field.errors %}
+                            <b style="color : red;">{{ err }}</b>
+                            {% endfor %}                    
+                            </div>
+                            </div>
+                           
+                           
+                    {% endfor %}
+
+
+                    <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></i></span>
+                        <div class="col-md-8">
+                         <div class="g-recaptcha" data-sitekey="6LcmmgwTAAAAAAjTdm709wN2xlBzAgND9hMPQnpU"></div>
+                     </div>
+                 </div>
+                 {% if Captcha_Error %}
+                 <div class="alert alert-error">
+                    <span class="col-md-1 col-md-offset-2 text-center"></i></span>
+                    <strong>{{ Captcha_Error }}</strong>
+                </div>
+                {% endif %}
+                  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="submitbutton" class="btn btn-primary btn-lg">Submit</button>
+      <button class="btn" data-dismiss="modal" id="cancelbutton" aria-hidden="true">Cancel</button>
+    </div>
+  </div>
+                        
+                
+                
+                <script type="text/javascript">
+                    document.getElementById("cancelbutton").onclick = function () {
+                    location.href = "{% url 'kyl:login' %}";
+                    };
+                </script>
+                </div>
+           
+        </form>
+
+
+
+{% endblock %}

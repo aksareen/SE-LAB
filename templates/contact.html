@@ -12,7 +12,7 @@
     <center><font size="5">
     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
-        {{ message }}
+        <b style="color : red;" >{{ message }}</b>
     </li>
     </font></center>
     {% endfor %}
@@ -62,8 +62,14 @@
 					<input type="email" placeholder="Email" name="email" value="" required style="color:black">
 					<input type="text" placeholder="Telephone" name="phone" value="" required style="color:black">
 					<textarea type="text" placeholder="Message" name="textdata" required style="color:black"></textarea>
-					<input id="ContactSubmit" type="submit" value="Submit" >
+                    <input id="ContactSubmit" type="submit" value="Submit" >
 					<input type="reset" value="Clear" >
+                    <div class="form-group">
+                        <span class="col-md-1 col-md-offset-2 text-center"></i></span>
+                        <div class="col-md-8">
+                         <div class="g-recaptcha" data-sitekey="6LcmmgwTAAAAAAjTdm709wN2xlBzAgND9hMPQnpU"></div>
+                     </div>
+                 </div>
 				</form>
 			</div>
 			<div class="clearfix"> </div>
